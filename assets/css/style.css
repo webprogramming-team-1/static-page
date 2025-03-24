@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     display: flex;
     font-family: "Noto Sans KR", sans-serif;
@@ -9,6 +14,8 @@ body {
     margin: 0;
     padding: 0;
 }
+
+
 .sections{
     font-family: "Noto Sans KR", sans-serif;
     font-optical-sizing: auto;
@@ -64,3 +71,44 @@ body {
     line-height: 1.6;
     margin: 10px 0 30px;
 }
+
+/* 3월 24일 내용 추가 - 문환주*/
+
+.expression{
+    width:70%;
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    margin: 10px 0 10px 0;
+    border-radius: 30px;
+}
+.moving_img{
+    width: 50px;
+}
+.linear{
+    animation:move 3s linear infinite;
+}
+.ease{
+    animation:move 3s ease infinite;
+}
+
+.ease-in{
+    animation:move 3s ease-in infinite;
+}
+
+.ease-out{
+    animation:move 3s ease-out infinite;
+}
+
+.ease-in-out{
+    animation:move 3s ease-in-out infinite;
+}
+
+.steps5{
+    animation:move 3s steps(5) infinite;
+}
+@keyframes move{
+    0%{transform:translate(0px,0px);}
+    100%{transform:translate(500px,0px);}
+}
+
+
