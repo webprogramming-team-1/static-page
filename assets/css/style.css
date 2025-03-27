@@ -116,7 +116,7 @@ body {
 }
 
 .cubic-bezier{
-    animation:move 3s cubic-bezier(0.3, 0, 0.5, 1.73) infinite;
+    animation:move 3s cubic-bezier(0.1, 0.85, 0.86, 0.2) infinite;
 }
 
 .steps5{
