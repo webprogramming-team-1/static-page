@@ -119,9 +119,31 @@ body {
     animation:move 3s cubic-bezier(0.1, 0.85, 0.86, 0.2) infinite;
 }
 
-.steps5{
-    animation:move 3s steps(5) infinite;
+.step{
+    animation:move 3s steps(5,jump-none) infinite;
 }
+.step:nth-child(3){animation-timing-function:steps(5,jump-start);}
+.step:nth-child(5){animation-timing-function:steps(5,jump-end);}
+.step:nth-child(7){animation-timing-function:steps(5,jump-both);}
+.step:nth-child(9){animation-timing-function:steps(5,jump-none);}
+
+.direction{
+    animation:move 3s ease-in-out infinite;
+}
+.direction:nth-child(3){animation-direction: normal;}
+.direction:nth-child(5){animation-direction: reverse;}
+.direction:nth-child(7){animation-direction: alternate;}
+.direction:nth-child(9){animation-direction: alternate-reverse;}
+
+.playstate{
+    animation:rotate 3s linear infinite;
+}
+.playstate:nth-child(3){animation-play-state: running;}
+.playstate:nth-child(3):hover{animation-play-state: paused;}
+
+.playstate:nth-child(5){animation-play-state: paused;}
+.playstate:nth-child(5):hover{animation-play-state: running;}
+
 @keyframes move{
     0%{transform:translate(0px,0px);}
     100%{transform:translate(500px,0px);}
