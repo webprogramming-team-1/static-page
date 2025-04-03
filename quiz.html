@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- 외부 스타일 시트 -->
+    <link href="./assets/css/style.css" rel="stylesheet">
+    
+    <title>문제 풀이 페이지</title>
+    <style>
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="question"></div>
+    <div id="answer-buttons"></div>
+    <button id="submit-button" style="display: none;">결과 확인</button>
+    <div id="result"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "다음 중 옳지 않은 것은?",
+                answers: ["1", "2", "3", "4"],
+                correctAnswer: "1"
+            },
+            {
+                question: "다음 중 프로그래밍 언어가 아닌 것은 무엇일까요?",
+                answers: ["Python", "HTML", "CSS", "JavaScript"],
+                correctAnswer: "HTML"
+            },
+            {
+                question: "다음 중 옳지 않은 것은?",
+                answers: ["1", "2", "3", "4"],
+                correctAnswer: "4"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        const questionDiv = document.querySelector('.question');
+        const answerButtonsDiv = document.getElementById('answer-buttons');
+        const submitButton = document.getElementById('submit-button');
+        const resultDiv = document.getElementById('result');
+        let userAnswers = [];
+
+        function displayQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            questionDiv.textContent = currentQuestion.question;
+            answerButtonsDiv.innerHTML = '';
+
+            currentQuestion.answers.forEach(answer => {
+                const button = document.createElement('button');
+                button.textContent = answer;
+                button.className = 'answer-button';
+                button.onclick = () => selectAnswer(answer);
+                answerButtonsDiv.appendChild(button);
+            });
+        }
+
+        function selectAnswer(answer) {
+            userAnswers[currentQuestionIndex] = answer;
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                displayQuestion();
+            } else {
+                submitButton.style.display = 'block'; // 마지막 문제 후 결과 확인 버튼 표시
+            }
+        }
+
+        function showResults() {
+            let correctCount = 0;
+            for (let i = 0; i < questions.length; i++) {
+                if (userAnswers[i] === questions[i].correctAnswer) {
+                    correctCount++;
+                }
+            }
+            resultDiv.textContent = `총 ${questions.length} 문제 중 ${correctCount} 문제 정답!`;
+            resultDiv.style.display = 'block';
+            submitButton.style.display = 'none'; // 결과 표시 후 버튼 숨김
+        }
+
+        submitButton.onclick = showResults;
+        displayQuestion();
+    </script>
+</body>
+</html>
