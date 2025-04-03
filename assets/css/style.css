@@ -84,44 +84,66 @@ body {
 .moving_img{
     width: 50px;
 }
-.move{
+.moving_img.move{
     animation: move 3s linear infinite;
 }
-.rotate{
+.moving_img.rotate{
     animation: rotate 3s linear infinite;
 }
-.scale{
+.moving_img.scale{
     animation: scale 3s linear infinite;
 }
-.skew{
+.moving_img.skew{
     animation: skew 3s linear infinite;
 }
-.linear{
+.moving_img.linear{
     animation:move 3s linear infinite;
 }
-.ease{
+.moving_img.ease{
     animation:move 3s ease infinite;
 }
 
-.ease-in{
+.moving_img.ease-in{
     animation:move 3s ease-in infinite;
 }
 
-.ease-out{
+.moving_img.ease-out{
     animation:move 3s ease-out infinite;
 }
 
-.ease-in-out{
+.moving_img.ease-in-out{
     animation:move 3s ease-in-out infinite;
 }
 
-.cubic-bezier{
+.moving_img.cubic-bezier{
     animation:move 3s cubic-bezier(0.1, 0.85, 0.86, 0.2) infinite;
 }
 
-.steps5{
-    animation:move 3s steps(5) infinite;
+.moving_img.step{
+    animation:move 3s steps(5,jump-none) infinite;
 }
+.moving_img.step:nth-child(3){animation-timing-function:steps(5,jump-start);}
+.moving_img.step:nth-child(5){animation-timing-function:steps(5,jump-end);}
+.moving_img.step:nth-child(7){animation-timing-function:steps(5,jump-both);}
+.moving_img.step:nth-child(9){animation-timing-function:steps(5,jump-none);}
+
+.moving_img.direction{
+    animation:move 3s ease-in-out infinite;
+}
+.moving_img.direction:nth-child(3){animation-direction: normal;}
+.moving_img.direction:nth-child(5){animation-direction: reverse;}
+.moving_img.direction:nth-child(7){animation-direction: alternate;}
+.moving_img.direction:nth-child(9){animation-direction: alternate-reverse;}
+
+.moving_img.playstate{
+    animation:rotate 3s linear infinite;
+}
+.moving_img.playstate:nth-child(3){animation-play-state: running;}
+.moving_img.playstate:nth-child(3):hover{animation-play-state: paused;}
+
+.moving_img.playstate:nth-child(5){animation-play-state: paused;}
+.moving_img.playstate:nth-child(5):hover{animation-play-state: running;}
+
 @keyframes move{
     0%{transform:translate(0px,0px);}
     100%{transform:translate(500px,0px);}
