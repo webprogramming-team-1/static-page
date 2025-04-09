@@ -7,7 +7,7 @@ body {
     display: flex;
     font-family: "Noto Sans KR", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 300;
+    font-weight: 400;
     font-style: normal;
     background-color: #f9f9f9;
     color: #333;
@@ -279,4 +279,124 @@ body {
   .button-close.animated:hover {
     transform: rotate(90deg);
   }
-  
+
+  .question {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.answer-button {
+    padding: 20px 40px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    width: 300px;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    display: none;
+}
+
+.custom-button {
+    border: 2px solid #333; /* 원하는 테두리 색상 */
+    background-color: transparent; /* 배경색 투명 */
+    color: #333; /* 텍스트 색상 */
+    padding: 10px 20px; /* 패딩 조정 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    font-size: 16px; /* 글자 크기 */
+    cursor: pointer; /* 커서 모양 */
+    transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
+}
+
+.custom-button:hover {
+    background-color: #333; /* 호버 시 배경색 */
+    color: white; /* 호버 시 텍스트 색상 */
+}
+
+.main_image {
+    position: relative; /* 이 div를 위치 설정의 기준으로 만듭니다. */
+}
+
+.main_image img {
+    display: block; /* 이미지 아래의 불필요한 공간을 방지합니다. */
+    width: 100%; /* 이미지를 컨테이너 내에서 반응형으로 만듭니다. */
+    height: auto; /* 가로 세로 비율을 유지합니다. */
+}
+
+.main_image_text {
+    position: absolute; /* 텍스트를 부모 요소 내에서 절대적으로 배치합니다. */
+    top: 60%; /* 텍스트를 세로로 중앙에 배치합니다. */
+    left: 35%; /* 텍스트를 가로로 중앙에 배치합니다. */
+    transform: translate(-50%, -50%); /* 요소 자체의 크기를 고려하여 조정합니다. */
+    color: white; /* 예시 텍스트 색상 */
+    font-size: 2em; /* 예시 글꼴 크기 */
+    text-align: center; /* 텍스트를 가로로 가운데 정렬합니다. */
+    /* 원하는 다른 스타일을 추가하세요. */
+}
+.main_image .custom-button { /* .main_image 내부에 있는 custom-button 클래스 선택 */
+    position: absolute;
+    left: 10%; /* 가로 중앙으로 이동 */
+    top: 75%; /* 세로 위치 조정 (텍스트 아래로) */
+    transform: translateX(-50%); /* 자신의 너비의 절반만큼 왼쪽으로 이동하여 가로 중앙 맞춤 */
+    /* 버튼 스타일 (선택 사항) */
+    padding: 10px 20px;
+    font-size: 1em;
+    /* ... 기타 스타일 ... */
+}
+
+.answer-button {
+    border: 2px solid #333; /* 원하는 테두리 색상 */
+    background-color: transparent; /* 배경색 투명 */
+    color: #333; /* 텍스트 색상 */
+    padding: 10px 20px; /* 패딩 조정 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    font-size: 16px; /* 글자 크기 */
+    cursor: pointer; /* 커서 모양 */
+    transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
+}
+
+.answer-button:hover {
+    background-color: #333; /* 호버 시 배경색 */
+    color: white; /* 호버 시 텍스트 색상 */
+}
+
+.tag-name{
+    font-size: 1.5em;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+.tag-descript{
+    background: #d0e2ff;
+    color: #052c65;
+    padding: 10px 20px 10px 20px;
+    margin: 10px 0 10px 0;
+    border-radius: 10px;
+}
+
+.tag-example {
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    margin: 10px 0 10px 0;
+    border-radius: 10px;
+}
+
+pre {
+    background: #eee;
+    padding: 10px 20px 10px 20px;
+    margin: 10px 0 10px 0;
+    border-radius: 10px;
+}
+
+
+.code{
+    font-family: "Noto Sans Mono", monospace;
+    font-optical-sizing: auto;
+    background: #eee;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
+}
