@@ -8,28 +8,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Noto Sans Mono-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
     <!-- 외부 스타일 시트 -->
     <link href="/static-page/assets/css/style.css" rel="stylesheet">
 
     <title>Learn About HTML5/CSS3</title>
-</head>
+
+    <!--highlight.js css-->
+    <link rel="stylesheet" href="/static-page/assets/css/highlight.css">
+    <!--"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"></head>-->
+
 <body>
     <div id="sidebar">
         <h2>빠른 이동</h2>
         <ul>
             <li><a href="#section1">섹션 1</a></li>
             <li><a href="#section2">섹션 2</a></li>
-            <li><a href="#section3">섹션 3</a></li>
+            <li><a href="#section3">HTML 태그</a></li>
             <li><a href="#section4">섹션 4</a></li>
             <li><a href="#section5">섹션 5</a></li>
             <li><a href="#section6">섹션 6</a></li>
         </ul>
     </div>
     <div id="content">
-        <div calss="main_image">
+        <div class="main_image">
             <img src="https://placehold.co/1000x400" alt="헤더 이미지">
-            <h1 class="main_image_text">Let's study about HTML5/CSS3</h1>
+            <h1 class="main_image_text">나는 HTML과 CSS에 대해 얼마나 알고 있을까?</h1>
+            <button class="custom-button" onclick="location.href='quiz.html'">문제 풀러가기 </button>
         </div>
+
         <h2 class="sections"id="section1">섹션 1</h2>
         <p>
             섹션 1 내용<br>
@@ -40,12 +48,92 @@
             섹션 2 내용<br>
         </p>
 
-
-        <h2 class="sections" id="section3">섹션 3</h2>
+        <h2 class="sections" id="section3">HTML 태그</h2>
         <p>
-            섹션 3 내용<br>
+            <p class="tag-name">&lt;a&gt; 태그의 정의 및 사용</p>
+            <pre><code class="language-html"> &lt;a href="URL"&gt; TEXT &lt;/a&gt;</code></pre>
+            <p class="tag-descript">&lt;a&gt;태그는 href 특성을 통해 다른 페이지나 같은 페이지의 어느 위치, 파일, 이메일 주소와 그 외 다른 URL로 연결할 수 있는 하이퍼링크를 만든다.</p><br>
+            <p class="tag-name">특성</p>
+                <p><a class="code"> download </a>
+                <ul>
+                    <li>링크로 이동하는 대신 사용자에게 URL을 저장할지 물어본다. 값을 저장하거나 저장하지 않을 수 있다.</li>
+                    <ul>
+                      <li>값이 없으면 파일 이름과 확장자는 브라우저가 다양한 인자로부터 생성해 제안한다.</li>
+                    </ul>
+                    <li>값을 지정하면 저장할 때의 파일 이름으로서 제안한다.</li>
+                </ul>
+                <pre><code class="language-html">&lt;a href="path/of/your/file" download="sample_image"&gt;다운로드&lt;/a&gt;</code></pre>
+                </p>
+                <p class="tag-example">
+                    <strong>적용 예시</strong><br>
+                        <a href="/static-page/assets/image/capy.png" download="sample_image">다운로드</a><br>
+                </p>
+                <p><a class="code"> href </a>
+                    <ul>
+                        <li>하이퍼링크가 가리키는 URL이다. 링크는 HTTP 기반 URL뿐만 아니라, 브라우저가 지원하는 모든 URL 스킴을 사용할 수 있다.</li>
+                        <ul>
+                            <li>페이지 구획을 가리키는 프래그먼트 URL</li>
+                            <li>미디어 파일 일부를 가리키는 미디어 프래그먼트</li>
+                            <li>tel: URL을 사용하는 전화번호</li>
+                            <li>mailto: URL을 사용하는 이메일 주소</li>
+                        </ul>
+                    </ul>
+                </p>
+                <p><a class="code"> rel </a>
+                    <ul>
+                        <li>하나의 스페이스로 구분하는, 연결한 URL과의 관계를 나타내는 링크 유형 목록이다.</li>
+                    </ul>
+                </p>
+                <p><a class="code"> target </a>
+                    <ul>
+                        <li>링크한 URL을 표시할 위치. 가능한 값은 브라우징 맥락으로, 즉 탭, 창, iframe의 이름이나 특정 키워드이다.</li>
+                        <ul>
+                            <li><a class="code">_self</a>: 기본값으로, 현재 창이나 탭에서 문서를 연다.</li>
+                            <li><a class="code">_blank</a>: 새로운 창이나 탭에 연다.</li>
+                            <li><a class="code">_parent</a>: 상위 프레임에서 연다.</li>
+                            <li><a class="code">_top</a>: 현재 창 본문 전체에 링크된 문서를 연다.</li>
+                        </ul>
+                    </ul>
+                </p>
+            <pre><code class="language-html">&lt;a href="https://www.google.com/"&gt;구글&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.google.com/" target="_blank"&gt;새 탭에서 열기&lt;/a&gt;</code></pre>
+            <p class="tag-example">
+                <strong>적용 예시</strong><br>
+                    <a href="https://www.google.com/">구글</a><br>
+                    <a href="https://www.google.com/" target="_blank">새 탭에서 열기</a>
+            </p>
+            <br>
         </p>
 
+        <p class="tag-name">&lt;br&gt; 태그의 정의 및 사용</p>
+        <pre><code class="language-html"> 1st paragraph &lt;br&gt; 2nd paragraph</code></pre>
+        <p class="tag-descript">&lt;br&gt;태그는 텍스트 안에 줄바꿈(캐리지 리턴)을 생성한다.</p><br>
+        <p class="tag-name">특성</p>
+            <p>
+            <ul>
+                <li><a class="code">&lt;br&gt;</a> 태그는 전역 특성만 포함한다.</li>
+            </ul>
+            </p>
+            <pre><code class="language-html">이 태그는&lt;br&gt;줄바꿈을 생성한다.&lt;/p&gt;</code></pre>
+            <p class="tag-example">
+                <strong>적용 예시</strong><br>
+                이 태그는<br>줄바꿈을 생성한다.
+            </p>
+
+        <p class="tag-name">&lt;p&gt; 태그의 정의 및 사용</p>
+        <pre><code class="language-html"> &lt;p&gt; paragraph &lt;/p&gt;</code></pre>
+        <p class="tag-descript">&lt;a&gt;태그는 하나의 문단을 나타낸다.</p><br>
+        <p class="tag-name">특성</p>
+            <p>
+            <ul>
+                <li><a class="code">&lt;p&gt;</a> 태그는 전역 특성만 포함한다.</li>
+            </ul>
+            </p>
+            <pre><code class="language-html">&lt;p&gt;이 태그는 문단을 나타낸다.&lt;/p&gt;</code></pre>
+                            <p class="tag-example">
+                                <strong>적용 예시</strong><br>
+                                이 태그는 문단을 나타낸다.
+                            </p>
         <h2 class="sections" id="section4">섹션 4</h2>
         <p>
             섹션 4 내용<br>
@@ -136,5 +224,7 @@
         </p>    
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 </html>
