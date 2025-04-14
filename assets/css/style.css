@@ -75,16 +75,18 @@ body {
 /* 3월 24일 내용 추가 - 문환주*/
 
 .expression{
-    width:70%;
     background: #eee;
     padding: 10px 20px 10px 20px;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 30px 0;
     border-radius: 30px;
 }
 .moving_img{
     width: 50px;
 }
-.moving_img.move{
+.moving_img.new{
+    animation: showtime 3s linear infinite;
+}
+.move{
     animation: move 3s linear infinite;
 }
 .moving_img.rotate{
@@ -144,6 +146,17 @@ body {
 .moving_img.playstate:nth-child(5){animation-play-state: paused;}
 .moving_img.playstate:nth-child(5):hover{animation-play-state: running;}
 
+@keyframes showtime{
+    0%{transform:translate(0px,0px) rotate(0deg) scale(1); }
+    12.5%{transform:translate(125px,0px) rotate(90deg) scale(1.7);}
+    25%{transform:translate(250px,0px) rotate(180deg) scale(2);}
+    37.5%{transform:translate(375px,0px) rotate(270deg) scale(1.7);}
+    50%{transform:translate(500px,0px)rotate(360deg) scale(1);}
+    37.5%{transform:translate(375px,0px) rotate(270deg) scale(0.75);}
+    75%{transform:translate(250px,0px)rotate(180deg) scale(0.5);}
+    12.5%{transform:translate(125px,0px) rotate(90deg) scale(0.75);}
+    100%{transform:translate(0px,0px)rotate(-0deg) scale(1);}
+}
 @keyframes move{
     0%{transform:translate(0px,0px);}
     100%{transform:translate(500px,0px);}
@@ -212,7 +225,7 @@ body {
   */
 
   /* 기본 버튼 스타일 */
-.button-close {
+  .button-close {
     display: inline-block;
     position: relative;
     width: 48px;

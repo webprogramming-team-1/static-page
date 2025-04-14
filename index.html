@@ -18,7 +18,7 @@
     <!--highlight.js css-->
     <link rel="stylesheet" href="/static-page/assets/css/highlight.css">
     <!--"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"></head>-->
-
+</head>
 <body>
     <div id="sidebar">
         <h2>빠른 이동</h2>
@@ -26,18 +26,17 @@
             <li><a href="#section1">섹션 1</a></li>
             <li><a href="#section2">섹션 2</a></li>
             <li><a href="#section3">HTML 태그</a></li>
-            <li><a href="#section4">섹션 4</a></li>
+            <li><a href="#section4">애니메이션</a></li>
             <li><a href="#section5">섹션 5</a></li>
             <li><a href="#section6">섹션 6</a></li>
         </ul>
     </div>
     <div id="content">
-        <div class="main_image">
+        <div calss="main_image">
             <img src="https://placehold.co/1000x400" alt="헤더 이미지">
             <h1 class="main_image_text">나는 HTML과 CSS에 대해 얼마나 알고 있을까?</h1>
             <button class="custom-button" onclick="location.href='quiz.html'">문제 풀러가기 </button>
         </div>
-
         <h2 class="sections"id="section1">섹션 1</h2>
         <p>
             섹션 1 내용<br>
@@ -47,6 +46,7 @@
         <p>
             섹션 2 내용<br>
         </p>
+
 
         <h2 class="sections" id="section3">HTML 태그</h2>
         <p>
@@ -134,9 +134,53 @@
                                 <strong>적용 예시</strong><br>
                                 이 태그는 문단을 나타낸다.
                             </p>
-        <h2 class="sections" id="section4">섹션 4</h2>
+
+        <h2 class="sections" id="section4">(CSS)애니메이션</h2>
         <p>
-            섹션 4 내용<br>
+            <p class="tag-name">애니메이션이란</p>
+            <ul>
+                <li>오브젝트 속성의 변화를 조작하는 <a class="code">transition</a> 기능의 연장선이다.</li>
+                <ul>
+                    <li>변화의 시작과 끝뿐만 아니라 변화 중간의 상태도 수정 가능</li>
+                    <li>변화의 지속 시간, 반복 횟수, 반복 방향 등을 지정 가능</li>
+                </ul>
+            </ul><br>
+            <div class="expression">
+                <h3>transition vs animation</h3>
+
+                <p>Transition</p>
+                <img class="moving_img move" src="/static-page/assets/image/capy.png">
+                <p>Animation</p>
+                <img class="moving_img new" src="/static-page/assets/image/capy.png">
+            </div><br>
+
+            <a class="code">@keyframes</a>
+            <ul>
+                <li>애니메이션의 프레임을 정의할 수 있다.</li>
+                <ul>    
+                    <li><a class="code">from</a>, <a class="code">to</a> : 애니메이션의 시작과 종료 상황의 스타일을 정의</li>
+                    <li><a class="code">0%</a> ~ <a class="code">100%</a> : 퍼센트 값으로 각 단계의 스타일 정의</li> 
+                </ul>
+            </ul><br>
+            <pre><code class="language-css">@keyframes anim_name{ from{} to{} } 
+@keyframes anim_name{ 0%{} 50%{} 100%{} }</code></pre><br>
+<a class="code">animation</a>
+            <ul>
+                <li>애니메이션 속성을 단축하여 작성할 수 있다.</li>
+                <li><a class="code">animation-name</a> 과 <a class="code">animation-duration</a> 은 필수, 나머지는 선택적으로 지정한다.</li>
+                <ul>    
+                    <li><a class="code">animation-name</a> : 이름</li>
+                    <li><a class="code">animation-duration</a> : 지속 시간</li>
+                    <li><a class="code">animation-delay</a> : 대기 시간</li>
+                    <li><a class="code">animation-timing-function</a> : 타이밍 함수</li>
+                    <li><a class="code">animation-iteration-count</a> : 반복 횟수</li>
+                    <li><a class="code">animation-direction</a> : 반복 방향</li>
+                    <li><a class="code">animation-fill-mode</a> : 전후 상황</li>
+                    <li><a class="code">animation-play-state</a> : 재생 상태</li>
+                </ul>
+            </ul><br>
+            <pre><code class="language-css"> animation: animation-name, animation-duration, (animation-delay), (animation-timing-function)...</code></pre>
+            <p class="tag-name">애니메이션의 예시</p>
             <div class="expression">
                 <h3>animation</h3>
 
@@ -153,6 +197,20 @@
                 <img class="moving_img skew" src="/static-page/assets/image/capy.png">
 
             </div>
+            <p class="tag-name">타이밍 함수</p>
+            <ul>
+                <li>애니메이션에 사용할 타이밍 함수를 지정한다( DEFAULT : <a class="code">ease</a> ).</li>
+                <ul>    
+                    <li><a class="code">linear</a> : 이름</li>
+                    <li><a class="code">ease</a> : 점점 느리게 </li>
+                    <li><a class="code">ease-in</a> : 점점 빠르게</li>
+                    <li><a class="code">ease-out</a> : 점점 느리게 (ease보다 시작이 더 빠름)</li>
+                    <li><a class="code">ease-in-out</a> : 중간을 빠르게</li>
+                    <li><a class="code">cubic-bezier</a> : 베지어 곡선으로 타이밍을 커스텀</li>
+                    <li><a class="code">steps</a> : 단계적으로 분할</li>
+                </ul>
+            </ul><br>
+
             <div class="expression">
                 <h3>animation-timing-function</h3>
 
@@ -175,6 +233,18 @@
                 <img class="moving_img cubic-bezier" src="/static-page/assets/image/capy.png">
                 
             </div>
+            <a class="code">steps</a><br>
+            
+            <ul>
+                <li>애니메이션을 몇 단계로 나눌지 설정할 수 있다.( DEFAULT : <a class="code">jump-end</a> ).</li>
+                <ul>    
+                    <li><a class="code">jump-start</a> 또는 <a class="code">start</a> : 시작을 스킵</li>
+                    <li><a class="code">jump-end</a> 또는 <a class="code">end</a> : 끝을 스킵 </li>
+                    <li><a class="code">jump-both</a> : 시작, 끝을 스킵</li>
+                    <li><a class="code">jump-none</a> : 스킵하지 않음</li>
+                </ul>
+            </ul><br>
+            <pre><code class="language-css"> step(level,timing)</code></pre>
             <div class="expression">
                 <h3>animation-steps</h3>
                 <p>jump-start</p>
@@ -186,6 +256,17 @@
                 <p>jump-none</p>
                 <img class="moving_img step" src="/static-page/assets/image/capy.png">
             </div>
+            <a class="code">steps</a><br>
+            
+            <ul>
+                <li>반복하는 애니메이션의 방향을 지정한다( DEFAULT : <a class="code">normal</a> ).</li>
+                <ul>    
+                    <li><a class="code">normarl</a> : 정방향 재생</li>
+                    <li><a class="code">reverse</a>  : 역방향 재생</li>
+                    <li><a class="code">alternate</a> : 정방향 왕복</li>
+                    <li><a class="code">alternate-reverse</a> : 역방향 왕복</li>
+                </ul>
+            </ul><br>
             <div class="expression">
                 <h3>animation-direction</h3>
                 <p>normal</p>
@@ -197,6 +278,14 @@
                 <p>alternate-reverse</p>
                 <img class="moving_img direction" src="/static-page/assets/image/capy.png">
             </div>
+            <ul>
+                <li>애니메이션의 재생 상태를 지정한다( DEFAULT : <a class="code">running</a> ).</li>
+                <ul>    
+                    <li><a class="code">running</a> : 애니메이션을 재생</li>
+                    <li><a class="code">pause</a>  : 애니메이션을 정지</li>
+                </ul><br>
+                <li>아래 예시는 hover를 이용한 재생과 정지를 보여준다. 이미지에 마우스를 올려보자.</li>
+            </ul><br>
             <div class="expression">
                 <h3>animation-play-state</h3>
                 <p>running</p>
