@@ -20,17 +20,37 @@
     <!--"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"></head>-->
 </head>
 <body>
+
     <div id="sidebar">
         <h2>빠른 이동</h2>
         <ul>
             <li><a href="#section1">섹션 1</a></li>
             <li><a href="#section2">섹션 2</a></li>
-            <li><a href="#section3">HTML 태그</a></li>
-            <li><a href="#section4">애니메이션</a></li>
+            <li> <a class="accordion-title">HTML 태그</a>
+                <div class="accordion-wrapper">
+                    
+                    <ul class="accordion-content">
+                        <li><a href="#tag-a">&lt;a&gt;</a></li>
+                        <li><a href="#tag-br">&lt;br&gt;</a></li>
+                        <li><a href="#tag-div">&lt;div&gt;</a></li>
+                        <li><a href="#tag-form">&lt;form&gt;</a></li>
+                        <li><a href="#tag-h">&lt;h#&gt;</a></li>
+                        <li><a href="#tag-i">&lt;i&gt;</a></li>
+                        <li><a href="#tag-img">&lt;img&gt;</a></li>
+                        <li><a href="#tag-li">&lt;li&gt;</a></li>
+                        <li><a href="#tag-p">&lt;p&gt;</a></li>
+                        <li><a href="#tag-span">&lt;span&gt;</a></li>
+                        <li><a href="#tag-table">&lt;table&gt;</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#section4">섹션 4</a></li>
             <li><a href="#section5">섹션 5</a></li>
             <li><a href="#section6">섹션 6</a></li>
         </ul>
     </div>
+ 
+    
     <div id="content">
         <div class="main_image">
             <img src="https://placehold.co/1000x400" alt="헤더 이미지">
@@ -50,7 +70,7 @@
 
         <h2 class="sections" id="section3">HTML 태그</h2>
         <p>
-            <p class="tag-name">&lt;a&gt; 태그의 정의 및 사용</p>
+            <p class="tag-name" id="tag-a">&lt;a&gt; 태그의 정의 및 사용</p>
             <pre><code class="language-html"> &lt;a href="URL"&gt; TEXT &lt;/a&gt;</code></pre>
             <p class="tag-descript">&lt;a&gt;태그는 href 특성을 통해 다른 페이지나 같은 페이지의 어느 위치, 파일, 이메일 주소와 그 외 다른 URL로 연결할 수 있는 하이퍼링크를 만든다.</p><br>
             <p class="tag-name">특성</p>
@@ -74,8 +94,8 @@
                         <ul>
                             <li>페이지 구획을 가리키는 프래그먼트 URL</li>
                             <li>미디어 파일 일부를 가리키는 미디어 프래그먼트</li>
-                            <li>tel: URL을 사용하는 전화번호</li>
-                            <li>mailto: URL을 사용하는 이메일 주소</li>
+                            <li><a class="code">tel</a>: URL을 사용하는 전화번호</li>
+                            <li><a class="code">mailto</a>: URL을 사용하는 이메일 주소</li>
                         </ul>
                     </ul>
                 </p>
@@ -105,7 +125,7 @@
             <br>
         </p>
 
-        <p class="tag-name">&lt;br&gt; 태그의 정의 및 사용</p>
+        <p class="tag-name" id="tag-br">&lt;br&gt; 태그의 정의 및 사용</p>
         <pre><code class="language-html"> 1st paragraph &lt;br&gt; 2nd paragraph</code></pre>
         <p class="tag-descript">&lt;br&gt;태그는 텍스트 안에 줄바꿈(캐리지 리턴)을 생성한다.</p><br>
         <p class="tag-name">특성</p>
@@ -120,7 +140,200 @@
                 이 태그는<br>줄바꿈을 생성한다.
             </p>
 
-        <p class="tag-name">&lt;p&gt; 태그의 정의 및 사용</p>
+            <p class="tag-name" id="tag-div">&lt;div&gt; 태그의 정의 및 사용</p>
+            <p class="tag-descript">&lt;div&gt;태그는 플로우 콘텐츠(Flow Content)를 담는 일반적인 컨테이너이다.</p><br>
+            <p> <a class="code">&lt;div&gt;</a>태그는 특별한 의미가 없다. 대신, 콘텐츠를 그룹화하여 <a class="code">class</a>또는 <a class="code">id</a>속성을 ​​사용하여 스타일을 지정하거나, 문서의 특정 섹션을 다른 언어로 작성되었음을 표시하는 등의 용도로 사용된다. </p>
+            <p class="tag-name">특성</p>
+                <p>
+                <ul>
+                    <li><a class="code">&lt;div&gt;</a> 태그는 전역 특성만 포함한다.</li>
+                </ul>
+                </p>
+                <pre><code class="language-html">&lt;div style="background: #000000; color: #ffffff";&gt;스타일을 지정하는데 사용될 수 있다.&lt;/div&gt;</code></pre>
+                                <p class="tag-example">
+                                    <strong>적용 예시</strong><br>
+                                    <a style="background: #000000; color: #ffffff;">스타일을 지정하는데 사용될 수 있다.</a>
+                                </p>
+
+
+       <p class="tag-name" id="tag-form">&lt;form&gt; 태그의 정의 및 사용</p>
+        <pre><code class="language-html">&lt;form action="/submit" method="post"&gt;
+    &lt;label for="username"&gt;사용자 이름&lt;/label&gt;
+    &lt;input type="text" id="username" name="username"&gt;
+    &lt;input type="submit" value="제출"&gt;
+&lt;/form&gt;</code></pre>
+        <p class="tag-descript">&lt;form&gt; 태그는 사용자로부터 데이터를 입력받고, 그 데이터를 서버로 전송할 수 있는 양식을 생성할 때 사용된다.<br>
+        </p>
+        <p>
+            <ul>
+                <li>웹에서 사용자와의 상호작용을 위한 기본적인 구조이다.</li>
+            </ul>
+        </p>
+        <p class="tag-name">특성</p>
+        <p>
+            <p><a class="code">accept-charset</a></p>
+            <ul>
+                <li>스페이스로 구분한, 서버가 허용하는 문자 인코딩의 목록이다.</li>
+            </ul>
+        </p>
+
+        <p>
+            <p><a class="code">action</a></p>
+            <ul>
+                <li>양식 데이터를 처리할 프로그램의 URI이다.</li>
+            </ul>
+        </p>
+
+        <p>
+            <p><a class="code">autocomplete</a></p>
+            <ul>
+                <li>입력 요소가 자동완성된 값을 기본값으로 가질 수 있는지 나타낸다.</li>
+                <ul>
+                    <li><a class="code">off</a>: 브라우저가 각 항목에 자동으로 값을 채워 넣지 않는다.</li>
+                    <li><a class="code">on</a>: 사용자의 과거 입력값에 기반하여 브라우저가 자동으로 값을 채워 넣는다.</li>
+                </ul>
+            </ul>
+        </p>
+
+        <p>
+            <p><a class="code">method</a></p>
+            <ul>
+                <li>양식을 제출할 때 사용할 HTTP 메서드이다.</li>
+                <ul>
+                    <li><a class="code">post</a>: 양식 데이터를 요청 본문으로 전송한다.</li>
+                    <li><a class="code">get</a>: 양식 데이터를 <a class="code">action</a>URL과 <a class="code">?</a>구분자 뒤에 이어 전송한다</li>
+                    <li>양식이 <a class="code">&lt;dialog&gt;</a>안에 위치할 경우 제출과 함께 대화상자를 닫는다.</li>
+                </ul>
+            </ul>
+        </p>
+
+        <p>
+            <p><a class="code">target</a></p>
+            <ul>
+                <li>양식 제출의 결과를 표시할 위치를 나타내는 표준 키워드 혹은 사용자 지정 이름이다.</li>
+            </ul>
+        </p>
+
+        <pre><code class="language-html">이탤릭체 적용은 &lt;i&gt;식은 죽 먹기&lt;/i&gt;지!</code></pre>
+        <p class="tag-example">
+            <strong>적용 예시</strong><br>
+            이탤릭체 적용은 <i>식은 죽 먹기</i>지!
+        </p>
+
+        <p class="tag-name" id="tag-li">&lt;li&gt; 태그의 정의 및 사용</p>
+                <pre><code class="language-html">&lt;ul&gt; &lt;li&gt;Neil Armstrong&lt;/li&gt; &lt;/ul&gt;</code></pre>
+                <p class="tag-descript">&lt;li&gt;요소는 목록의 항목을 나타냅니다.
+                    반드시 정렬 목록 &lt;ol&gt;, 비정렬 목록 &lt;ul&gt;, 혹은 메뉴 &lt;menu&gt; 안에 위치해야 합니다.
+                    메뉴와 비정렬 목록에서는 보통 불릿으로 항목을 나타내고, 정렬 목록에서는 숫자나 문자를 사용한 오름차순 카운터로 나타냅니다.
+                </p><br>
+                <p class="tag-name">특성</p>
+                    <p>
+                    <ul>
+                        <li><a class="code">&lt;li&gt;</a> 태그는 전역 특성만 포함한다.</li>
+                        <li><a class="code">&lt;ol&gt;</a> 요소는 정렬된 목록을 나타냅니다. 보통 숫자 목록으로 표현합니다.
+                        <li><a class="code">&lt;ul&gt;</a> 요소는 정렬되지 않은 목록을 나타냅니다. 보통 불릿으로 표현합니다.
+                    </ul>
+                    </p>
+        
+                    <pre><code class="language-html">&lt;ul&gt; 
+    &lt;li&gt;Neil Armstrong&lt;/li&gt;
+    &lt;li&gt;Alan Bean&lt;/li&gt;
+    &lt;li&gt;Peter Canrad&lt;/li&gt;
+    &lt;li&gt;Edgar Mitchell&lt;/li&gt;
+    &lt;li&gt;Alan Shepard&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                    <div class="tag-example">
+                        <strong>적용 예시</strong><br> 
+                        <ul>
+                          <li>Neil Armstrong</li>
+                          <li>Alan Bean</li>
+                          <li>Peter Conrad</li>
+                          <li>Edgar Mitchell</li>
+                          <li>Alan Shepard</li>
+                        </ul>
+                    </div>
+
+
+        
+        <p class="tag-name" id="tag-h">&lt;h#&gt; 태그의 정의 및 사용</p>
+        <pre><code class="language-html"> &lt;h1&gt;Important Heading&lt;/h1&gt; </code></pre>
+        <p class="tag-descript">&lt;h#&gt; 태그는 제목(Heading)을 나타낸다.<br>
+            &lt;h1&gt; 부터 &lt;h6&gt; 까지 있으며 숫자가 작을수록 더 중요한 제목을 의미하며, 문서의 구조와 계층을 표현할 때 사용된다.
+        </p>
+        <p>
+            <ul>
+                <li>기본적으로 굵은 글씨이며 줄바꿈이 자동 적용된다.</li>
+                <li><a class="code">&lt;h1&gt;</a>은 가장 중요한 제목으로, 페이지 당 1 개만 사용하는 것이 좋다.</li>
+                <li>문서의 논리적인 구조를 형성하며 SEO(검색 엔진 최적화)에 큰 영향을 준다.</li>
+                <li>시각적으로만 큰 글씨를 만들고 싶을 경우에는 CSS 로 크기 조절하는 것이 적절하다.</li>
+            </ul>
+        </p>
+        <p class="tag-name">특성</p>
+        <p>
+            <ul>
+                <li><a class="code">&lt;h#&gt;</a> 태그는 전역 특성만 포함한다.</li>
+            </ul>
+        </p>
+        <pre><code class="language-html">&lt;h1&gt;가장 중요한 제목&lt;/h1&gt;
+&lt;h2&gt;다음 중요한 제목&lt;/h2&gt;</code></pre>
+        <p class="tag-example">
+            <strong>적용 예시</strong><br>
+            <a style="font-size: 2em">가장 중요한 제목</a><br><a style="font-size: 1.5em">다음 중요한 제목</a>
+        </p>
+
+        <p class="tag-name" id="tag-i">&lt;i&gt; 태그의 정의 및 사용</p>
+        <pre><code class="language-html"> &lt;i&gt;paragraph&lt;/i&gt; </code></pre>
+        <p class="tag-descript">&lt;i&gt; 태그는 이탤릭(기울임꼴) 스타일을 적용하는 인라인 태그이다. 전통적으로는 외래어, 기술 용어, 생각 등을 표현할 때 사용되었지만, 현대 HTML 에서는 시각적인 표현을 위한 용도로 주로 사용된다.<br>
+        </p>
+        <p>
+            <ul>
+                <li>텍스트가 이탤릭(기울임꼴)으로 표시된다.</li>
+                <li>의미적 강조가 아니라 스타일에 초점을 둔다.</li>
+                <li>의미를 강조하고 싶을 경우 <a class="code">&lt;em&gt;</a> 태그를 사용하는 것이 더 적절하다.</li>
+                <li>CSS 와 함께 사용하여 스타일을 다양하게 조정 가능하다.</li>
+            </ul>
+        </p>
+        <p class="tag-name">특성</p>
+        <p>
+            <ul>
+                <li><a class="code">&lt;i&gt;</a> 태그는 전역 특성만 포함한다.</li>
+            </ul>
+        </p>
+        <pre><code class="language-html">이탤릭체 적용은 &lt;i&gt;식은 죽 먹기 지&lt;/i&gt;</code></pre>
+        <p class="tag-example">
+            <strong>적용 예시</strong><br>
+            이탤릭체 적용은 <i>식은 죽 먹기 지</i>
+        </p>
+
+
+        <p class="tag-name" id="tag-img">&lt;img&gt; 태그의 정의 및 사용</p>
+            
+        <pre><code class="language-html">&lt;img
+class="fit-picture"
+src="/shared-assets/images/examples/grapefruit-slice.jpg"
+alt="Grapefruit slice atop a pile of other slices" /&gt;</code></pre>
+        <p class="tag-descript">
+            &lt;img&gt; 요소는 문서에 이미지를 삽입할 때 사용됩니다.
+        </p>
+        <p class="tag-name">특성</p>
+        <ul>
+            <li><a class="code">&lt;scr&gt;</a> 특성은 필수이며, 포함하고자 하는 이미지 파일의 경로를 지정합니다.</li>
+            <li><a class="code">&lt;alt&gt;</a> 특성은 이미지의 텍스트 설명입니다. 선택 사항이지만 스크린 리더가 alt의 값을 읽어 사용자에게 이미지를 설명하기 때문에 접근성 측면에서 매우 중요합니다. 또한, 이미지가 로드되지 않을 경우 해당 텍스트가 대신 표시됩니다.</li>
+        </ul>
+
+        <pre><code class="language-html">
+&lt;img src="/static-page/assets/image/capy.png"&gt;
+        </code></pre>
+
+        <p class="tag-example">
+            <strong>적용 예시</strong><br><br>
+            <img src="/static-page/assets/image/capy.png">
+        </p>
+
+
+
+
+        <p class="tag-name" id="tag-p">&lt;p&gt; 태그의 정의 및 사용</p>
         <pre><code class="language-html"> &lt;p&gt; paragraph &lt;/p&gt;</code></pre>
         <p class="tag-descript">&lt;a&gt;태그는 하나의 문단을 나타낸다.</p><br>
         <p class="tag-name">특성</p>
@@ -134,6 +347,85 @@
                                 <strong>적용 예시</strong><br>
                                 이 태그는 문단을 나타낸다.
                             </p>
+
+        <p class="tag-name" id="tag-span">&lt;span&gt; 태그의 정의 및 사용</p>
+            <pre><code class="language-html">&lt;p&gt;&lt;span&gt;Some Texts&lt;/span&gt;&lt;/p&gt;</code></pre>
+            <p class="tag-descript">&lt;span&gt; 요소는 구문 콘텐츠를 위한 통용 인라인 컨테이너로, 본질적으로는 아무것도 나타내지 않습니다. 스타일을 적용하기 위해서, 또는 &lt;lang&gt; 등 어떤 특성의 값을 서로 공유하는 요소를 묶을 때 사용할 수 있습니다. 적절한 의미를 가진 다른 요소가 없을 때에만 사용해야 합니다. &lt;span&gt;은 &lt;div&gt;와 매우 유사하지만, &lt;div&gt;는 블록 레벨 요소인 반면 &lt;span&gt;은 인라인 요소입니다.</p><br>
+            <p class="tag-name">특성</p>
+                <p>
+                    <ul>
+                        <li><a class="code">&lt;span&gt;</a> 태그는 전역 특성만 포함한다.</li>
+                    </ul>
+                </p>
+            <pre><code class="language-html"><strong>HTML</strong><br>
+&lt;li&gt;&lt;span&gt;
+    &lt;a href="portfolio.html" target="_blank"&gt;See my portfolio&lt;/a&gt;
+&lt;/span&gt;&lt;/li&gt;</code></pre>
+            <pre><code class="language-css"><strong>CSS</strong><br>
+li span {
+    background: gold;
+}</code></pre>
+
+            <div class="tag-example">
+                <strong>적용 예시</strong><br>
+                <li><span style="background: gold">
+                    <a href="portfolio.html" target="_blank">See my portfolio</a>
+                </span></li>
+            </div><br>                   
+
+        <p class="tag-name" id="tag-table">&lt;table&gt; 태그의 정의 및 사용</p>
+            
+            <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+            <p class="tag-descript">
+                &lt;table&gt; HTML 요소는 표 형식의 데이터를 나타냅니다. <br>
+                즉, 행과 열로 구성된 2차원 표에 정보가 표시되어 있으며 데이터가 들어 있습니다.
+            </p>
+            <p class="tag-name">특성</p>
+            <ul>
+                <li><a class="code">&lt;tr&gt;</a> 요소는 표의 셀 행을 정의합니다. 행의 셀은 데이터 셀(<a class="code">&lt;td&gt;</a>)과 헤더 셀(<a class="code">&lt;th&gt;</a>) 요소를 조합하여 설정할 수 있습니다.</li>
+                <li><a class="code">&lt;td&gt;</a> 요소는 데이터가 포함된 표의 셀을 정의하며, <a class="code">&lt;tr&gt;</a> 요소의 자식으로 사용됩니다.</li>
+            </ul>
+
+            <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Name&lt;/td&gt;
+    &lt;td&gt;Age&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Maria Sanchez&lt;/td&gt;
+    &lt;td&gt;28&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Michael Johnson&lt;/td&gt;
+    &lt;td&gt;34&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+            <div class="tag-example">
+                <strong>적용 예시</strong><br><br>
+                <table border="1">
+                    <tr>
+                        <td>Name</td>
+                        <td>Age</td>
+                    </tr>
+                    <tr>
+                        <td>Maria Sanchez</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Johnson</td>
+                        <td>34</td>
+                    </tr>
+                </table>
+            </div>
+
+
 
         <h2 class="sections" id="section4">(CSS)애니메이션</h2>
         <p>
@@ -315,5 +607,16 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionWrapper = document.querySelector('.accordion-wrapper');
+            const accordionTitle = document.querySelector('.accordion-title');
+        
+            accordionTitle.addEventListener('click', function(e) {
+                e.preventDefault(); // 기본 링크 동작 방지
+                accordionWrapper.classList.toggle('open');
+            });
+        });
+    </script>
 </body>
 </html>
