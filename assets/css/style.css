@@ -413,3 +413,21 @@ pre {
     padding: 0 5px 0 5px;
     border-radius: 5px;
 }
+.accordion-content {
+    display: none; /* 초기 상태에서 숨김 */
+    margin-left: 20px; /* 들여쓰기 */
+    padding: 0;
+    list-style: none;
+}
+
+.accordion-wrapper.open .accordion-content {
+    display: block; /* 'open' 클래스가 있을 때 보이게 함 */
+}
+
+.accordion-title:hover {
+    color: #a3a3a3;
+}
+
+.accordion-wrapper.open .accordion-title {
+    background-color: #ddd;
+}
